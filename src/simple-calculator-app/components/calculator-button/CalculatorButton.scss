@@ -1,0 +1,42 @@
+@use "../../constants/colors.scss";
+
+button {
+  border: none;
+  border-radius: 100vw;
+  cursor: pointer;
+  color: colors.$font;
+  padding: 8px;
+  font-size: x-large;
+
+  &.wide {
+    grid-column: span 2;
+  }
+  &.buttonDefault {
+    background-color: colors.$default;
+
+    &:hover {
+      background-color: lighten(colors.$default, 30%);
+    }
+  }
+  &.buttonPrimary {
+    background-color: colors.$primary;
+
+    &:hover {
+      background-color: lighten(colors.$primary, 20%);
+    }
+
+    &:active,
+    &.isActive {
+      background-color: colors.$background-inverse;
+      color: colors.$primary;
+    }
+  }
+  &.buttonSecondary {
+    background-color: colors.$secondary;
+    color: colors.$font-inverse;
+
+    &:hover {
+      background-color: lighten(colors.$secondary, 30%);
+    }
+  }
+}
